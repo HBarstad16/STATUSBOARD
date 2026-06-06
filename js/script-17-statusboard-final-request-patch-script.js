@@ -12,7 +12,7 @@
     }
     if(!Array.isArray(state.repository.personellLocations)){
       let loc=[];try{loc=Array.isArray(PERSONELL_LOCATIONS)?PERSONELL_LOCATIONS:[];}catch(e){}
-      state.repository.personellLocations=loc.length?loc:['OPS','Tårn','Brief','Hangar','Ute','Kjøretøy','Reserve'];
+      state.repository.personellLocations=loc.length?loc:['UTE','Kantinen','Trening','Hvilerom'];
     }
     if(!Array.isArray(state.repository.logTags))state.repository.logTags=['Title','Received DTG','Recieved DTG','Receiced DTG','Summary','From'];
     if(!Array.isArray(state.repository.timelineLogTags))state.repository.timelineLogTags=['Title','Received DTG','Recieved DTG','Receiced DTG'];
