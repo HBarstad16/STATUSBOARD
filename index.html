@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statusboard Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app edit-mode">
+    <div class="status-shell">
+      <main id="board" class="board">
+        <div class="drop-hint">Slipp modulen her</div>
+        <div id="empty" class="empty"><div class="empty-card"><h2>Statusboard</h2><p>Åpne admin og legg inn moduler.</p></div></div>
+      </main>
+    </div>
+
+    <div class="admin-entry">
+      <button id="displayMode" class="btn" title="Bytt mellom display og edit mode">Display mode</button>
+      <button id="adminButton" class="btn primary" title="Åpne admin. Snarvei: Ctrl + Alt + A">Admin</button>
+    </div>
+
+    <aside id="adminPanel" class="admin-panel">
+      <div class="admin-head">
+        <div><h1>Admin</h1><p>Alle kontroller er samlet her.</p></div>
+        <div class="row" style="width:auto;gap:8px;align-items:center">
+          <button id="hideAdmin" class="tool-btn" type="button" title="Skjul admin, men behold edit mode">Skjul admin</button>
+          <button id="closeAdmin" class="mini-btn" type="button" title="Skjul admin">×</button>
+        </div>
+      </div>
+      <div class="admin-body">
+        <section class="section">
+          <div class="section-title"><h2>Visninger</h2><button id="newView" class="mini-btn">+</button></div>
+          <div id="tabs" class="tabs"></div>
+          <div class="row" style="margin-top:10px">
+            <button id="renameView" class="tool-btn">Gi nytt navn</button>
+            <button id="deleteView" class="tool-btn danger">Slett view</button>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><h2>Moduler</h2></div>
+          <div id="modulePalette" class="module-palette"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><h2>Board</h2></div>
+          <div class="grid2">
+            <button id="fullscreen" class="tool-btn">Fullscreen</button>
+            <button id="exportBtn" class="tool-btn">Export</button>
+            <button id="importBtn" class="tool-btn">Import</button>
+            <button id="rulesBtn" class="tool-btn">Formatting</button>
+            <button id="resetDesignBtn" class="tool-btn">Reset design</button>
+            <button id="resetBtn" class="tool-btn danger">Reset</button>
+          </div>
+          <div class="field" style="margin-top:12px"><label>Global tekststørrelse</label><input id="fontScale" type="range" min=".7" max="1.8" step=".1"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><h2>Valgt modul</h2></div>
+          <div id="selectedSettings" class="muted">Velg en modul på boardet.</div>
+        </section>
+
+        <section class="section" id="cellSettingsSection">
+          <div class="section-title"><h2>Valgt tabellcelle</h2></div>
+          <div id="cellSettings" class="muted">Klikk en tabellcelle i admin-modus.</div>
+        </section>
+      </div>
+    </aside>
+  </div>
+
+  <div id="wordDropdown" class="word-dropdown"></div>
+
+  <div id="loginModal" class="modal-backdrop">
+    <div class="modal password-box">
+      <div class="modal-top"><div><h2>Admin-passord</h2><p>Skriv inn passord for å åpne admin.</p></div><button id="closeLogin" class="mini-btn">×</button></div>
+      <div class="field"><label>Passord</label><input id="passwordInput" type="password" autocomplete="current-password" placeholder="Passord"></div>
+      <div class="row"><button id="loginBtn" class="tool-btn primary">Åpne admin</button></div>
+    </div>
+  </div>
+
+  <div id="importModal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-top"><div><h2>Import dashboard</h2><p>Lim inn eksportert JSON.</p></div><button id="closeImport" class="mini-btn">×</button></div>
+      <div class="field"><textarea id="importText" placeholder="JSON"></textarea></div>
+      <button id="loadImport" class="tool-btn primary">Last inn</button>
+    </div>
+  </div>
+
+  <div id="rulesModal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-top"><div><h2>Conditional formatting</h2><p>Ord som matches får valgt farge.</p></div><button id="closeRules" class="mini-btn">×</button></div>
+      <div class="row" style="margin-bottom:12px"><button id="addRule" class="tool-btn">+ Legg til regel</button><button id="saveRules" class="tool-btn primary">Lagre</button></div>
+      <div id="rulesList"></div>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+<!-- v15: timeline period exactly on track + remove event arrow, keep connector -->
+
+
+
+<!-- v16: exact timeline geometry requested -->
+
+
+
+
+<!-- v17: single-source timeline geometry using one shared bottom reference -->
+
+
+
+
+<!-- v18: restore v5-style period centering and use a real downward event arrow to the timeline line -->
+
+
+
+
+<!-- v19: precise timeline geometry - period centered on line, arrow tip hits line, text above connector -->
+
+
+
+
+<!-- v26: Fix tekstlogg upload "[object Event]" by using explicit local tekstlogg.js loader and replacing old log upload handlers -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- v32: display Received DTG in compact Zulu DTG format in Log module -->
+
+
+
+
+<!-- v35: workflow upgrade - undo/redo, snap grid, copy/paste, context menu, log filters to timeline, now marker, timeline autofit -->
+
+
+
+<!-- Statusboard final requested update patch 2026-06-05 -->
+<!-- v20: event arrow must touch the white timeline line, not the blue period marker -->
+
+
+<!-- v21: remove event arrow, keep event text in same position and extend connector to timeline line -->
+
+
+<!-- v25: create timeline events from parsed log entries (Title + Received DTG) -->
+
+
+
+
+
+<!-- v31: hardcoded log line tags only: Title, Received DTG, Summary, From -->
+
+
+
+<!-- v33: final log override - compact DTG display + working hardcoded filters -->
+
+
+
+<!-- Table module modern compact patch: aesthetic table + compact/normal/large cells -->
+  <script src="js/script-01.js"></script>
+  <script src="js/script-02.js"></script>
+  <script src="js/script-03.js"></script>
+  <script src="js/script-04.js"></script>
+  <script src="js/script-05.js"></script>
+  <script src="js/script-06.js"></script>
+  <script src="js/script-07.js"></script>
+  <script src="js/script-08-timeline-bottom-lock-v13-script.js"></script>
+  <script src="js/script-09-timeline-bottom-anchor-v14-script.js"></script>
+  <script src="js/script-10-timeline-v19-precise-geometry-script.js"></script>
+  <script src="js/script-11-log-pdf-v26-script.js"></script>
+  <script src="js/script-12-log-text-v28-script.js"></script>
+  <script src="js/script-13-log-text-v29-script.js"></script>
+  <script src="js/script-14-log-v30-fix.js"></script>
+  <script src="js/script-15-log-v32-received-dtg-display-format.js"></script>
+  <script src="js/script-16-workflow-v35-script.js"></script>
+  <script src="js/script-17-statusboard-final-request-patch-script.js"></script>
+  <script src="js/script-18-log-to-timeline-v25-script.js"></script>
+  <script src="js/script-19-timeline-v27-format-ticks-nextday.js"></script>
+  <script src="js/script-20-log-v31-hardcoded-tags.js"></script>
+  <script src="js/script-21-log-v33-final-override.js"></script>
+  <script src="js/script-22-table-modern-compact-patch.js"></script>
+  <script src="js/script-23-stabilization.js"></script>
+  <script src="js/script-24-display-polish.js"></script>
+</body>
+</html>
